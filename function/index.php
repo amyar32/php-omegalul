@@ -25,6 +25,16 @@
    function sayHello($word = "Datang", $str = "Admin") {
       return "Selamat $word, $str!";
    }
+
+   // Array
+   // =====
+   $hari = array("Senin", "Selasa", "Rabu");
+   $months = ["Januari", "Februari", "Maret"];
+   $mix = [1, "Halo"];
+
+   // menambah data ke array
+   $hari[] = "Kamis";
+
 ?>
 
 <!DOCTYPE html>
@@ -36,8 +46,12 @@
    <title>Document</title>
 </head>
 <body>
-   <?=
-      sayHello();
-   ?>
+   <?php for($i = 0; $i < count($hari); $i++) { ?>
+      <?php echo "$i. $hari[$i] <br>" ?>
+   <?php } ?>
+
+   <?php forEach($months as $month) { ?>
+      <?php echo "$month <br>" ?>
+   <?php } ?>
 </body>
 </html>
